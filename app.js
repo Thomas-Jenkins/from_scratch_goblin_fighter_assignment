@@ -1,9 +1,10 @@
 // import functions and grab DOM elements
 import { goblins } from './goblins-data.js';
-import { renderGoblin } from './render-utils.js';
+// import { renderGoblin } from './render-utils.js';
+// import { findGoblin } from './render-utils.js';
 const goblinBox = document.getElementById('goblin-box');
 const addGoblin = document.querySelector('[name="add-goblins"]');
-const playercharacter = document.querySelector('#player-character');
+
 // let state
 
 // set event listeners 
@@ -13,9 +14,24 @@ const playercharacter = document.querySelector('#player-character');
 function displayGoblins() {
     goblinBox.textContent = '';
     for (let goblin of goblins){
-        const goblinDisEL = renderGoblin(goblin);
-        goblinBox.append(goblinDisEL);
+        const goblinEL = document.createElement('div');
+        const goblinName = document.createElement('h3');
+        const goblinHealth = document.createElement('p');
+    
+        goblinName.textContent = goblin.name;
+        goblinHealth.textContent = goblin.health;
+    
+        goblinEL.classList.add('goblin');
+        goblinEL.append(goblinName, goblinHealth);
+        goblinBox.append(goblinEL);
+        
+        goblinEL.addEventListener('click', () => {
+            goblin.health--;
+            displayGoblins();
+        });
     }
+
+    
 }
 
 displayGoblins();
