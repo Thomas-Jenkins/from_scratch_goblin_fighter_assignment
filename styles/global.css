@@ -33,3 +33,34 @@ footer {
     justify-content: flex-end;
     background-color: var(--footer-background);
 }
+/* my code after */
+#player-character {
+    height: 300px;
+    width: 300px;
+    border: 1px solid black;
+}
+.goblin {
+    height: fit-content;
+    width: fit-content;
+    border: 1px solid black;
+    margin: 10px;
+}
+.goblin:hover {
+    cursor: pointer;
+}
+#gameboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+}
+#combat-log {
+    width: 220px;
+    height: 600px;
+    border: 1px solid black;
+    overflow: auto;
+
+}
+#combat-log li {
+    width: fit-content;
+    height: fit-content;
+    border: 1px solid black;
+}
