@@ -48,3 +48,13 @@ footer {
 .goblin:hover {
     cursor: pointer;
 }
+#gameboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+}
+#combat-log {
+    width: 220px;
+    height: 600px;
+    border: 1px solid black;
+
+}
